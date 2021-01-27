@@ -35,6 +35,7 @@
 %\usepackage{minted}
 %\usemintedstyle{borland}
 
+\usepackage{hyperref}
 \usepackage{subcaption}
 \usepackage{bm}
 
@@ -120,7 +121,7 @@ The following list gives a simple overview of the steps used for trajectory iden
 \item \textbf{Spectral filter:} For each time $t$, the spectrum is denoised by applying a Gaussian filter (Eqn. \ref{filter} with $\tau = 0.5$ and $\sigma=2$) about the center frequency $k_{0}$ determined in Step 3 for that window $t\in|T_i|$.
 \item \textbf{Inverse transform and trajectory:} The denoised spectrum is transformed back to the spatial domain, and the mean location of all points above an $80\%$ detection threshold is considered to be the submarine's location.
 \end{enumerate}
-Note that the detection threshold is set by the operator, according to the degree of various signals persisting after time averaging. The $70\%$ and $80\%$ detection thresholds were seen to work quite well. For further information, Appendix \ref{functions} details some Python functions while Appendix \ref{implementation} contains code implementation.
+Note that the detection threshold is set by the operator, according to the degree of various signals persisting after time averaging. The $70\%$ and $80\%$ detection thresholds were seen to work quite well. For further information, Appendix \ref{functions} details some Python functions while Appendix \ref{implementation} contains code implementation. Github repository for this work is available \href{https://github.com/crewsdw/amath582}{here}.
 
 \subsection{Analysis results}
 Initialization according to Step 1 in the schematic allowed visualization of the dataset via an isosurface, as in Fig. \ref{iso}. The signal is clearly visible to the eye in this plot, and was confirmed as a real object by time-averaging of the frequency spectrum over a set of seven time measurements. Time-averaging of the frequency is critical, as the object is moving so that its average position is not constant. However, the object's spectral signature is unchanged as it did not change shape (or did not change acoustic signature, as the nature of the data provided is obscure). Table \ref{frequencies} shows centers found by time averaging.
